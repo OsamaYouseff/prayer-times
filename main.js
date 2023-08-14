@@ -1,5 +1,5 @@
+import axios from 'axios';
 //// DOM variables
-
 let cityInput = document.getElementById("city-input");
 let countryInput = document.getElementById("country-input");
 let searchBtn = document.getElementById("search-btn");
