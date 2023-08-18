@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="a great website to get your paryer times for any city in the world by city and country"
+    />
     <link
       href="https://fonts.cdnfonts.com/css/sf-pro-display"
       rel="stylesheet"
@@ -19,39 +23,64 @@
   </head>
   <body>
     <div class="container">
+      <!-- today-time -->
+      <div class="today-time">
+        <span id="city">Cairo</span>
+        <div>
+          <span id="day">Tuesday</span>
+          <span id="date"> 08 / 08 / 2023</span>
+        </div>
+      </div>
+      <!--// today-time //-->
+
+      <!-- time-sec -->
+      <div class="times-sec">
+        <div id="time">10:10 PM</div>
+        <div class="next-prayer">
+          <div>
+            <span>Next Prayer</span>
+            <span id="next-prayer">Asr</span>
+          </div>
+          <div>
+            <span>Reminded Time</span>
+            <span id="reminded-time">00:40:20</span>
+          </div>
+        </div>
+      </div>
+      <!--// time-sec //-->
+
+      <!-- time-sec -->
+      <div class="time-sec">
+        <div
+          class="prayer-container"
+          id="prayer-container"
+          bis_skin_checked="1"
+        ></div>
+      </div>
+      <!--// time-sec //-->
+
+      <!-- search-bar -->
       <div class="search-bar">
         <form action="">
-          <div>
-            <input
-              id="city-input"
-              type="text"
-              placeholder="Enter the City "
-              required
-            />
-            <input
-              id="country-input"
-              type="text"
-              placeholder="Enter the Country"
-              required
-            />
-          </div>
+          <input
+            id="city-input"
+            type="text"
+            placeholder="Enter the City "
+            value="cairo"
+            required
+          />
+          <input
+            id="country-input"
+            type="text"
+            placeholder="Enter the Country"
+            value="egypt"
+            required
+          />
+
           <input id="search-btn" type="button" value="Get Times" />
         </form>
       </div>
-      <div class="time-sec">
-        <div class="today-time">
-          <span class="date">Date : <span id="date">08 / 08 / 2023</span></span>
-          <span class="day">Day : <span id="day">Tuesday</span> </span>
-          <span class="time">Time : <span id="time">10:10 PM</span> </span>
-        </div>
-        <div class="title">
-          <span class="name">Prayer Name</span>
-          <span class="time">Time</span>
-        </div>
-        <div class="prayer-container" id="prayer-container">
-          <span>Please Add City And Country To Get Times</span>
-        </div>
-      </div>
+      <!--// search-bar //-->
     </div>
     <!-- <script src="node_modules/axios/dist/axios.min.js"></script> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
