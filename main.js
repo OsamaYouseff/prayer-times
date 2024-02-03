@@ -139,15 +139,22 @@ function organizeInputs(city, country) {
 })();
 
 function getTimeNow(need12h) {
-  const now = new Date();
-  const adjustedTime = new Date(
-    now.getTime()
-  );
-  let timeString = adjustedTime.toLocaleTimeString("en-US", {
-    hour12: need12h,
-  });
+  var currentDate = new Date();
+  var hours = currentDate.getHours();
+  var minutes = currentDate.getMinutes();
+  var seconds = currentDate.getSeconds();
 
-  return timeString;
+  if (need12h) {
+    // Convert to 12-hour format
+    var period = (hours >= 12) ? 'PM' : 'AM';
+    hours = (hours % 12) || 12; // Handle midnight (12 AM)
+    var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds + ' ' + period;
+  } else {
+    // Format the time in 24-hour format
+    var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+  }
+
+  return formattedTime;
 }
 
 function setTimeContainer() {
