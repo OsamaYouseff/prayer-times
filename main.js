@@ -139,16 +139,12 @@ function organizeInputs(city, country) {
 })();
 
 function getTimeNow(need12h) {
-  const now = new Date();
-  const adjustedTime = new Date(
-    now.getTime()
-  );
-  let timeString = adjustedTime.toLocaleTimeString("en-US", {
-    hour12: need12h,
-  });
-
-  return timeString;
+  var currentDate = new Date();
+  // Get the current time
+  var currentTime = currentDate.toLocaleTimeString();
+  return currentTime;
 }
+
 
 function setTimeContainer() {
   timeNow = getTimeNow(true);
