@@ -140,9 +140,8 @@ function organizeInputs(city, country) {
 
 function getTimeNow(need12h) {
   const now = new Date();
-  const desiredTimeZoneOffset = -60;
   const adjustedTime = new Date(
-    now.getTime() + desiredTimeZoneOffset * 60 * 1000
+    now.getTime()
   );
   let timeString = adjustedTime.toLocaleTimeString("en-US", {
     hour12: need12h,
@@ -168,9 +167,8 @@ function createTimeBlock(name, time, num) {
   let TimeBlock = document.createElement("div");
   TimeBlock.classList = `prayer-time ${name} animation-effect `;
 
-  TimeBlock.innerHTML = `<img src="images/icon${
-    num + 1
-  }.png" alt="logo-image" /><span class="name">${name}</span><span class="time">${time}</span>`;
+  TimeBlock.innerHTML = `<img src="images/icon${num + 1
+    }.png" alt="logo-image" /><span class="name">${name}</span><span class="time">${time}</span>`;
   prayerContainer.appendChild(TimeBlock);
 }
 
@@ -219,7 +217,7 @@ function checkRemindedTimeForNextPrayer() {
   let remindedTime = fromTimestampTo12h(remindedTimeArr[0]);
   remindedTime = lesThan10ForAllTime(remindedTime);
 
-  
+
   let nextPrayerName = prayerTimesAndNames[0][remindedTimeArr[1]];
 
   return [remindedTime, nextPrayerName];
