@@ -154,8 +154,10 @@ function getTimeNow(need12h) {
     var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
   }
 
+  console.log(formattedTime);
   return formattedTime;
 }
+
 
 function setTimeContainer() {
   timeNow = getTimeNow(true);
